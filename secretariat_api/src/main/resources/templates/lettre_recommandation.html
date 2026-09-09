@@ -189,8 +189,8 @@
 
 <div class="line">
     <span class="bold">Sous-discipline :</span>
-    oui <span class="box" th:text="${fidele.statutFidele != null and fidele.statutFidele.estSousDiscipline ? 'X' : ''}"></span>
-    non <span class="box" th:text="${fidele.statutFidele == null or not fidele.statutFidele.estSousDiscipline ? 'X' : ''}"></span>
+    oui <span class="box" th:text="${fidele.statutFidele != null and fidele.statutFidele.estSousDiscipline == true ? 'X' : ''}"></span>
+    non <span class="box" th:text="${fidele.statutFidele == null or fidele.statutFidele.estSousDiscipline != true ? 'X' : ''}"></span>
     &nbsp;&nbsp;
     <span class="bold">Date de levée de la discipline :</span> <span class="dots" style="width: 30%;" th:text="${fidele.statutFidele != null and fidele.
   statutFidele.dateLeveeDiscipline != null ? #temporals.format(fidele.statutFidele.dateLeveeDiscipline, 'dd/MM/yyyy') : ''}"></span>
