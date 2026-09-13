@@ -57,9 +57,16 @@ CREATE DATABASE secretariat_db;
 DB_URL=jdbc:postgresql://localhost:5432/secretariat_db
 DB_USERNAME=postgres
 DB_PASSWORD=votre_mot_de_passe_local
+
+# Configuration Clés API IA pour l'OCR & Structuration (Optionnel)
+GROQ_API_KEY=votre_cle_api_groq
+GEMINI_API_KEY=votre_cle_api_gemini
 ```
 
-> ⚠️ **IMPORTANT :** Le fichier `.env` contient des identifiants locaux secrets et est ignoré par Git via `.gitignore`. Ne le poussez jamais sur le dépôt distant.
+> 💡 **Remarque sur les services IA (Groq / Gemini) :**  
+> L'extraction intelligente OCR du module `mouvement` utilise en priorité **Groq AI** (Llama 3.3 70B) puis **Google Gemini AI** en fallback. Si aucune clé d'API n'est configurée, un parser Regex local autonome prend automatiquement le relais.
+
+> ⚠️ **IMPORTANT :** Le fichier `.env` contient des identifiants locaux secrets et des clés d'API. Il est ignoré par Git via `.gitignore`. Ne le poussez jamais sur le dépôt distant.
 
 ---
 
