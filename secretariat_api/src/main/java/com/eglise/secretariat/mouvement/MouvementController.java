@@ -51,7 +51,7 @@ public class MouvementController {
             return ResponseEntity.ok(result);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(new OcrResultDto(null, null, null, "Erreur lors de l'OCR: " + e.getMessage()));
+                    .body(new OcrResultDto(null, null, null, null, "Erreur lors de l'OCR: " + e.getMessage()));
         }
     }
 

@@ -51,4 +51,4 @@ mouvement/
 ## 📦 Data Transfer Objects (`dto/`)
 
 * **`ConformiteStatusDto.java`** : Contient le statut détaillé de la conformité d'un membre (carte de membre à jour, carnet de dîme, situation administrative).
-* **`OcrResultDto.java`** : Structure de retour contenant le texte brut extrait par l'OCR ainsi que les champs pré-analysés et structurés (nom, église d'origine, etc.).
+* **`OcrResultDto.java`** : Structure de retour contenant le texte brut extrait par l'OCR ainsi que les champs pré-analysés (`nomFidele`, `pasteurSignataire`, `egliseOrigine`, `datePresentation`, `rawText`).
