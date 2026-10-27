@@ -73,7 +73,7 @@
 		<dependency>
 			<groupId>com.github.ALLCLAD</groupId>
 			<artifactId>Package-Mapping</artifactId>
-			<version>v1.0.0</version>
+			<version>v1.0.1</version>
 		</dependency>
 
 		<dependency>

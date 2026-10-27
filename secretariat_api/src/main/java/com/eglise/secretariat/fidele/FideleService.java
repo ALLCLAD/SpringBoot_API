@@ -19,7 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 @Service
-@Transactional
+@Transactional(readOnly = true)
 public class FideleService {
 
     private final FideleRepository fideleRepository;
@@ -39,12 +39,14 @@ public class FideleService {
         return mapToDto(fidele);
     }
 
+    @Transactional
     public FideleDto createFidele(FideleDto dto) {
         Fidele fidele = mapToEntity(dto);
         Fidele savedFidele = fideleRepository.save(fidele);
         return mapToDto(savedFidele);
     }
 
+    @Transactional
     public FideleDto updateFidele(Long id, FideleDto dto) {
         Fidele fidele = fideleRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Fidèle non trouvé avec l'ID : " + id));
@@ -54,6 +56,7 @@ public class FideleService {
         return mapToDto(updatedFidele);
     }
 
+    @Transactional
     public void deleteFidele(Long id) {
         if (!fideleRepository.existsById(id)) {
             throw new ResourceNotFoundException("Fidèle non trouvé avec l'ID : " + id);
